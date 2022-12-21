@@ -10,10 +10,9 @@ const Tab = createBottomTabNavigator();
 
 export default function Navbar() {
   return (
-    <Tab.Navigator initialRouteName="Login">
-      <Tab.Screen name="Profile" component={ProfileScreen} />
-      <Tab.Screen name="Login" component={LoginScreen} />
+    <Tab.Navigator initialRouteName="Home">
       <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Profile" component={ProfileScreen} />
       <Tab.Screen name="Settings" component={SettingsScreen} />
     </Tab.Navigator>
   );

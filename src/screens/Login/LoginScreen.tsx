@@ -3,16 +3,29 @@ import React, { useState } from "react";
 import { Layout, Text, Button, Input } from "@ui-kitten/components";
 import { Icon } from "@ui-kitten/components";
 import { TextStyleProps } from "@ui-kitten/components/devsupport";
-export default function LoginScreen() {
+import NavigationString from "../../Constasts/NavigationString";
+ const  LoginScreen=(props:any)=> {
+
   const [mobileNo, setmobileNo] = useState("");
-  const [otp, setotp] = useState("");
+  const [pincode, setPincode] = useState("");
+
+
   function loginHandler() {
-    console.log(mobileNo);
+    console.log(mobileNo,pincode);
+
+    if(mobileNo=="8329241021" && pincode=="123456"){
+     props.navigation.navigate(NavigationString.DASHBOARD)
+    }
+    
   }
 
   const MobileIcon = () => {
     return <Icon name="smartphone" />;
   };
+
+  const onRegisterHandler=()=>{
+    props.navigation.navigate(NavigationString.REGISTER)
+  }
 
   return (
     <Layout
@@ -45,15 +58,18 @@ export default function LoginScreen() {
           maxLength={6}
           style={{ marginBottom: 8 }}
           placeholder="6 digit PinCode"
-          value={otp}
+          value={pincode}
           secureTextEntry={true}
-          onChangeText={(nextValue) => setotp(nextValue)}
+          onChangeText={(nextValue) => setPincode(nextValue)}
         />
 
         <Button onPress={() => loginHandler()}>LOGIN</Button>
         <Button appearance="ghost">Forgot PinCode?</Button>
-        <Button appearance="outline">New User? Register here</Button>
+        <Button appearance="outline" onPress={onRegisterHandler}>New User? Register here</Button>
       </View>
     </Layout>
   );
 }
+
+
+export default LoginScreen;

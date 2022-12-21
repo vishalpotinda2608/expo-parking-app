@@ -14,6 +14,7 @@ import SettingsScreen from "./src/screens/Settings/SettingsScreen";
 import Navbar from "./src/screens/Navbar/Navbar";
 import { EvaIconsPack } from "@ui-kitten/eva-icons";
 import React from "react";
+import Routes from "./src/screens/Navbar/Routes";
 
 export default function App() {
   return (
@@ -21,7 +22,7 @@ export default function App() {
       <IconRegistry icons={EvaIconsPack} />
       <ApplicationProvider {...eva} theme={{ ...eva.light, ...theme }}>
         <NavigationContainer>
-          <Navbar />
+          <Routes />
         </NavigationContainer>
       </ApplicationProvider>
     </>
