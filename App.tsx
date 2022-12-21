@@ -23,6 +23,10 @@ export default function App() {
       <ApplicationProvider {...eva} theme={{ ...eva.light, ...theme }}>
         <NavigationContainer>
           <Routes />
+
+
+
+          
         </NavigationContainer>
       </ApplicationProvider>
     </>
